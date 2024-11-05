@@ -8,8 +8,10 @@
 1. Backend (PHP API)
 a. Pada file koneksi.php, file ini membuat koneksi ke database coba-ionic. Koneksi ini digunakan untuk memeriksa data login di database.
 b. Pada file login.php nantinya akan mengambil input dari JSON yang dikirim oleh aplikasi ionic.
+```
 $input = file_get_contents('php://input');
 $data = json_decode($input, true);
+```
 c. Data username dan password diambil dari input tersebut, lalu query dijalankan untuk memeriksa apakah kombinasi username dan password ada di tabel user.
 $username = trim($data['username']);
 $password = md5(trim($data['password']));
